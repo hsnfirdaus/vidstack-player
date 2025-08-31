@@ -48,8 +48,6 @@ export class ShakaController {
     this.#eventManager.listen(this.#instance, ShakaLibEventName.ERROR, this.#onError.bind(this));
     for (const callback of this.#callbacks) callback(this.#instance);
 
-    this.#instance.attach(this.#video);
-
     this.#ctx.player.dispatch('shaka-instance' as any, {
       detail: this.#instance,
     });
@@ -193,6 +191,7 @@ export class ShakaController {
 
   loadSource(src: Src) {
     if (!isString(src.src)) return;
+    this.#instance?.attach(this.#video);
     this.#instance?.load(src.src);
   }
 
