@@ -25,6 +25,7 @@ const NPM_EXTERNAL_PACKAGES = [
     'react-dom',
     'media-icons',
     'media-captions',
+    /^shaka-player/,
     'hls.js',
     'dashjs',
     /^@floating-ui/,
