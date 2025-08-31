@@ -11,6 +11,7 @@ import { RequestQueue } from '../../foundation/queue/request-queue';
 import type { GoogleCastPromptError } from '../../providers/google-cast/events';
 import type { GoogleCastLoader } from '../../providers/google-cast/loader';
 import type { MediaProviderAdapter } from '../../providers/types';
+import { prefersReducedMotion } from '../../utils/aria';
 import { coerceToError } from '../../utils/error';
 import { canGoogleCastSrc } from '../../utils/mime';
 import { preconnect } from '../../utils/network';
@@ -22,7 +23,6 @@ import { MediaPlayerController } from '../api/player-controller';
 import { boundTime } from '../api/player-state';
 import { MediaControls } from '../controls';
 import type { MediaStateManager } from './media-state-manager';
-import { prefersReducedMotion } from '../../utils/aria';
 
 /**
  * This class is responsible for listening to media request events and calling the appropriate

@@ -10,8 +10,8 @@ import dts from 'rollup-plugin-dts';
 import { copyPkgFiles } from '../../.build/copy-pkg-files.js';
 import { buildDefaultTheme, watchStyles } from './build/build-styles.js';
 import { decorators } from './build/rollup-decorators';
-import { minify } from './build/rollup-minify';
-import { typescript } from './build/rollup-ts';
+import { minify } from './build/rollup-minify.js';
+import { typescript } from './build/rollup-ts.js';
 
 const MODE_WATCH = process.argv.includes('-w'),
   MODE_TYPES = process.argv.includes('--config-types'),
