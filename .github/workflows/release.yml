@@ -1,0 +1,50 @@
+name: Release Dev
+
+on:
+  push:
+    branches:
+      - shaka-release
+  workflow_dispatch:
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+    permissions: write-all
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build packages
+        run: pnpm build
+
+      - name: Tar vidstack package
+        run: |
+          cd packages/vidstack/dist-npm
+          tar -czf ../../../vidstack.tar.gz .
+
+      - name: Tar react package
+        run: |
+          cd packages/react/dist-npm
+          tar -czf ../../../vidstack-react.tar.gz .
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: dev
+          name: dev
+          files: |
+            vidstack.tar.gz
+            vidstack-react.tar.gz
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
