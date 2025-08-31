@@ -2,6 +2,7 @@ import type { AudioProvider } from './audio/provider';
 import type { DASHProvider } from './dash/provider';
 import type { GoogleCastProvider } from './google-cast/provider';
 import type { HLSProvider } from './hls/provider';
+import type { ShakaProvider } from './shaka/provider';
 import type { VideoProvider } from './video/provider';
 import type { VimeoProvider } from './vimeo/provider';
 import type { YouTubeProvider } from './youtube/provider';
@@ -23,6 +24,10 @@ export function isHLSProvider(provider: any): provider is HLSProvider {
 
 export function isDASHProvider(provider: any): provider is DASHProvider {
   return provider?.$$PROVIDER_TYPE === 'DASH';
+}
+
+export function isShakaProvider(provider: any): provider is ShakaProvider {
+  return provider?.$$PROVIDER_TYPE === 'SHAKA';
 }
 
 /** @see {@link https://www.vidstack.io/docs/player/providers/youtube} */

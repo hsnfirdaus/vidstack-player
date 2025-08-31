@@ -240,6 +240,9 @@ importers:
       rollup-pluginutils:
         specifier: ^2.8.2
         version: 2.8.2
+      shaka-player:
+        specifier: ^4.16.0
+        version: 4.16.0
       solid-js:
         specifier: ^1.8.19
         version: 1.9.9
@@ -4788,6 +4791,7 @@ packages:
       {
         integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==,
       }
+    requiresBuild: true
     dev: true
 
   /jsdom@21.1.2:
@@ -6355,6 +6359,14 @@ packages:
       {
         integrity: sha512-E5LDX7Wrp85Kil5bhZv46j8jOeboKq5JMmYM3gVGdGH8xFpPWXUMsNrlODCrkoxMEeNi/XZIwuRvY4XNwYMJpw==,
       }
+    dev: true
+
+  /shaka-player@4.16.0:
+    resolution:
+      {
+        integrity: sha512-LqwwtuqFDn0QgNkKjtRWeWDKXNwFm/LZM/1tMsnQ4eo8jGkAMES2pSEWzdhUtAgtBdaMNvl5E3VHJRuR3m2bWg==,
+      }
+    engines: { node: '>=18' }
     dev: true
 
   /shebang-command@2.0.0:

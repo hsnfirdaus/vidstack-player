@@ -9,7 +9,7 @@ import dts from 'rollup-plugin-dts';
 import { copyPkgFiles } from '../../.build/copy-pkg-files.js';
 import { buildDefaultTheme, watchStyles } from '../vidstack/build/build-styles.js';
 import { decorators } from '../vidstack/build/rollup-decorators';
-import typescript from '../vidstack/build/rollup-ts';
+import typescript from '../vidstack/build/rollup-ts.js';
 
 const MODE_WATCH = process.argv.includes('-w'),
   MODE_TYPES = process.argv.includes('--config-types');
